@@ -1,0 +1,74 @@
+GET http://localhost:4004/odata/v4/main/SalesOrderHeaders
+Content-Type: application/json
+
+###
+
+POST http://localhost:4004/odata/v4/main/SalesOrderHeaders
+Content-Type: application/json
+
+{
+    "id": "1234"            // Se não funcionar, observar se coloquei `id` em minúsculo no arquivo `schema.cds`
+}
+
+###
+
+DELETE http://localhost:4004/odata/v4/main/SalesOrderHeaders(id=1234)           // Aqui posso colocar `id=<nº-do-id>` ou o id direto dentro dos parêntesis.
+Content-Type: application/json
+
+###
+
+POST http://localhost:4004/odata/v4/main/SalesOrderHeaders
+Content-Type: application/json
+
+{ }
+    
+###
+
+POST http://localhost:4004/odata/v4/main/SalesOrderHeaders
+Content-Type: application/json
+
+{ 
+    "id": "1234"
+}
+
+###
+
+PUT http://localhost:4004/odata/v4/main/SalesOrderHeaders(id=1234)
+Content-Type: application/json
+
+{ 
+    "modifiedBy": "test"
+}
+
+###
+
+POST http://localhost:4004/odata/v4/main/SalesOrderHeaders
+Content-Type: application/json
+
+{ 
+    "id": "5678"
+}
+
+<!--
+Outra forma que posso colocar é usando variáveis. Por exemplo, na primeira linha:
+
+```
+@localhost=localhost:4004/odata/v4/main
+@id = 1234
+
+GET http://{{localhost}}/SalesOrderHeaders
+Content-Type: application/json
+
+```
+
+Se vou repetir um **id** várias vezes, posso criar uma variável para ele.
+
+###
+
+PUT http://{{localhost}}/SalesOrderHeaders(id={{id}})
+Content-Type: application/json
+
+{ 
+    "modifiedBy": "test"
+}
+-->

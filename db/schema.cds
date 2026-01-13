@@ -3,6 +3,6 @@ using { managed } from '@sap/cds/common';           // Estou importanto os Aspec
 namespace sales;            // Aqui adiciono o namespace sales
 
 entity SalesOrderHeaders: managed {         // Quando coloquei o Aspect **Managed** ali em cima, preciso informar quem será "Manager" e aí aqui depois do nome da entidade coloco `: managed`
-    key ID: UUID;
+    key id: UUID;
 }
 
