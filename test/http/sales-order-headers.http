@@ -71,4 +71,34 @@ Content-Type: application/json
 { 
     "modifiedBy": "test"
 }
--->
+
+###
+
+# Buscar todos os pedidos maiores ou iguais a 2 milhões
+
+GET http://localhost:4004/odata/v4main/SalesOrderHeaders?$filter=totalAmount ge 2000000
+
+###
+
+Buscar todos os pedidos menores ou iguais a 200k
+
+GET http://localhost:4004/odata/v4/main/SalesOrderHeaders?$filter=totalAmount le 200000
+
+
+###
+
+# Expandindo os itens
+
+GET http://localhost:4004/odata/v4/main/SalesOrderHeaders?$expand=items
+
+###
+
+# Juntando comandos de filtro e expansão
+
+GET http://localhost:4004/odata/v4/main/SalesOrderHeaders?$filter=totalAmount le 200000&$expand=items
+
+###
+# Expandindo os itens, produtos, customers e filtrando
+
+GET http://localhost:4004/odata/v4/main/SalesOrderHeaders?$expand=items($expand=product;filter=qualtitu le 30), customer
+
