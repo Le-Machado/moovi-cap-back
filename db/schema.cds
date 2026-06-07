@@ -30,4 +30,5 @@ entity Products {
         price: Decimal(15,2);
 }
 
+Test
 
